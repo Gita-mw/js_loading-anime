@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Loading</title>
+
+  <!--
+    【メリット】
+    - コンテンツが全部読み込み完了してから、ローディング画面が終了する。
+    - ローディング中のページスクロールを無効化できる。
+
+    【デメリット】
+    - エラー等でJSが動かなかったら永遠にコンテンツが見えない。
+  -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+    integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      padding: 5vw;
+    }
+
+    #loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: coral;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      transition: opacity linear 1s;
+
+      /* クリックイベント無効 */
+      pointer-events: none;
+    }
+
+    #loading i {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 50px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 1.6vw;
+    }
+
+    .img-wrapper {
+      width: calc((100vw - 10vw - 4.8vw) / 3);
+      margin-bottom: 1.6vw;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading">
+    <!-- Gifニメーション、SVGアニメーション、CSSアニメーションお好みで -->
+    <i class="fas fa-spinner fa-pulse"></i>
+    <!-- <i class="fas fa-stroopwafel fa-spin"></i> -->
+  </div>
+
+  <div id="sitewrap">
+    <!-- 最初非表示 -->
+    <header class="header">
+      <p>Header</p>
+    </header>
+
+    <main class="main">
+
+      <a href="https://menta.work/plan/1062">GitaMENTA</a>
+
+      <div class="container">
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/190727/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/190728/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/9042806/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/6780963/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/778914/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/8469893/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/566331/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/446755/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/762960/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/1353633/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/3694365/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/1227291/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/531563/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/8336486/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/1103088/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/3150958/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/894/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/3323575/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/962362/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/1270951/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/4773283/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/1052192/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/2351409/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/1368747/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/217461/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/3053437/1600x900">
+        </figure>
+        <figure class="img-wrapper">
+          <img src="https://source.unsplash.com/collection/2489501/1600x900">
+        </figure>
+      </div>
+    </main>
+
+    <footer class="gooter">
+      <p>Footer</p>
+    </footer>
+  </div><!-- /sitewrap -->
+
+
+  <script>
+    (function () {
+      const loadingArea = document.querySelector('#loading');
+      const sitewrap = document.querySelector('#sitewrap');
+
+      function noScroll(event) {
+        event.preventDefault();
+      }
+
+      function loadingAnime() {
+        loadingArea.style.opacity = 0;
+      }
+
+      document.addEventListener('touchmove', noScroll, { passive: false });
+      document.addEventListener('mousewheel', noScroll, { passive: false });
+
+      window.addEventListener('load', () => {
+        loadingAnime();
+        document.removeEventListener('touchmove', noScroll, { passive: false });
+        document.removeEventListener('mousewheel', noScroll, { passive: false });
+      });
+    })();
+  </script>
+</body>
+
+</html>
